@@ -1,0 +1,16 @@
+- name: Update packages (Fedora-based)
+  dnf:
+          name: "*"
+          state: latest
+
+- name: Reboot the box if kernel updated
+  reboot:
+          msg: "Reboot initiated for kernal updates"
+          connect_timeout: 5
+          reboot_timeout: 300
+          pre_reboot_delay: 0
+          post_reboot_delay: 30
+          test_command: uptime
+  when: reboot_required_file.stat.exists
+
+

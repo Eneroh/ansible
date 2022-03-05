@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+        - import_tasks: tasks/main.yml
+
+- hosts: fedora
+  become: yes
+  tasks:
+        - import_tasks: tasks/fedora.yml

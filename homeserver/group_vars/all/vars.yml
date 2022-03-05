@@ -1,0 +1,6 @@
+username: en
+packages:
+        - vim
+        - htop
+        - neofetch
+        - speedtest-cli
