@@ -4,6 +4,11 @@
   tasks:
         - import_tasks: tasks/main.yml
 
+- hosts: debian
+  become: yes
+  tasks:
+	- import_tasks: tasks/debian.yml
+
 - hosts: fedora
   become: yes
   tasks:
